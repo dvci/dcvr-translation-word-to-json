@@ -64,6 +64,7 @@ overall_dict.pop('remove4')
 overall_dict.pop('remove3')
 overall_dict.pop('remove2')
 overall_dict.pop('remove1')
+overall_dict.pop('qrpage') #removed cause it's empty
 # print (overall_dict)
 
 jsonData = json.dumps(overall_dict, indent=4, separators=(", ", ": "), ensure_ascii=False).replace('null', '""')
