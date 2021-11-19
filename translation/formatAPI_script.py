@@ -69,28 +69,29 @@ for z in documents:
     #removes the unncessary tables (but has the information if ever needed to use them)
     #formatHTML
     headinginfo_format = overall_dict.get('FormatHTML').get('heading')
-    infoText_format = overall_dict.get('FormatHTML').get('infoText').replace('24', '\{linkExpireHours\}')
-    viewLink_format = overall_dict.get('FormatHTML').get('viewlink')
+    infoText_format = overall_dict.get('FormatHTML').get('infoText').replace('24', '{linkExpireHours}')
+    viewLink_format = overall_dict.get('FormatHTML').get('viewlink') or overall_dict.get('FormatHTML').get('mmatlink')
     learnMore_format = overall_dict.get('FormatHTML').get('learnMore')
     questions_format = overall_dict.get('FormatHTML').get('questions')
     visitFAQ_format = overall_dict.get('FormatHTML').get('visitFAQ')
     stayInformed_format = overall_dict.get('FormatHTML').get('stayInformed')
-    viewInfo_format = overall_dict.get('FormatHTML').get('viewInfo')
+    viewInfo_format = overall_dict.get('FormatHTML').get('viewInfo') or overall_dict.get('FormatHTML').get('viewnfo')
     emailLabel_format = overall_dict.get('FormatHTML').get('emailLabel')
 
     output_str = '----------------------FORMATHTML----------------------------- \n\n\n'
 
-    output_str += '$"<img src=\'\{webUrl\}/imgs/MyTurn-logo.png\'><br/>" + \n'
-    output_str += '$"<h3 style=\'color: #f06724\'>' + headinginfo_format + '</h3>" + \n'
-    output_str +=  '$"<p>' + infoText_format + '</p> + \n'
-    output_str += '$"<p><a href=\'{url\}\'>' + viewLink_format + '</a></p>" + \n'
-    output_str += '$"<p> <a href=\'{cdcUrl\} ' + learnMore_format + '</a> </p>" + \n'
-    output_str += '$"<p><b>' + questions_format + '</b></p>" + \n'
-    output_str += '$"<p><a href=\'{vaccineFAQUrl\}\'>' + visitFAQ_format + '</a></p>" + \n'
-    output_str += '$"<p><b>' + stayInformed_format + '</b></p>" + \n'
-    output_str += '$"<p><a href=\'{covidWebUrl\}\'>' + viewInfo_format + '</a></p><br/>" + \n'
-    output_str += '$"<footer><p style=\'text-align:center\'>' + emailLabel_format + '</p>" + \n'
-    output_str += '$"<p style=\'text-align:center\'><img src=\'{emailLogoUrl\}\'></p></footer>",'
+    output_str += '$"<img src=\'{webUrl}/imgs/MyTurn-logo.png\'><br/>" +\n'
+    output_str += '$"<h3 style=\'color: #f06724\'>' + headinginfo_format + '</h3>" +\n'
+    output_str +=  '$"<p>' + infoText_format + '</p> +\n'
+    output_str += '$"<p><a href=\'{url}\'>' + viewLink_format + '</a></p>" +\n'
+    output_str += '$"<p><a href=\'{cdcUrl}\'>' + learnMore_format + '</a></p>" +\n'
+    output_str += '$"<p><b>' + questions_format + '</b></p>" +\n'
+    output_str += '$"<p><a href=\'{vaccineFAQUrl}\'>' + visitFAQ_format + '</a></p>" +\n'
+    output_str += '$"<p><b>' + stayInformed_format + '</b></p>" +\n'
+    output_str += '$"<p><a href=\'{covidWebUrl}\'>' + viewInfo_format + '</a></p><br/>" +\n'
+    output_str += '$"<hr>" +\n'
+    output_str += '$"<footer><p style=\'text-align:center\'>' + emailLabel_format + '</p>" +\n'
+    output_str += '$"<p style=\'text-align:center\'><img src=\'{emailLogoUrl}\'></p></footer>",'
 
 
     #htmlnotfoundformat
@@ -98,25 +99,26 @@ for z in documents:
     output_str += '\n ----------------------------------FormatNotFoundHTML-------------------\n\n\n'
 
     headinginfo_noformat = overall_dict.get('FormatNotFoundHTML').get('heading')
-    infoText_noformat = overall_dict.get('FormatNotFoundHTML').get('infoText').replace('24', '\{linkExpireHours\}')
+    infoText_noformat = overall_dict.get('FormatNotFoundHTML').get('infoText').replace('24', '{linkExpireHours}')
     nextSteps_noformat = overall_dict.get('FormatNotFoundHTML').get('nextSteps')
     questions_noformat = overall_dict.get('FormatNotFoundHTML').get('questions')
     visitFAQ_noformat = overall_dict.get('FormatNotFoundHTML').get('visitFAQ')
     stayInformed_noformat = overall_dict.get('FormatNotFoundHTML').get('stayInformed')
-    viewInfo_noformat = overall_dict.get('FormatNotFoundHTML').get('viewInfo')
+    viewInfo_noformat = overall_dict.get('FormatNotFoundHTML').get('viewInfo') or overall_dict.get('FormatNotFoundHTML').get('mmatInfo')
     emailLabel_noformat = overall_dict.get('FormatNotFoundHTML').get('emailLabel')
 
 
-    HTMLnotfound_str = '$"<img src=\'\{webUrl\}/imgs/MyTurn-logo.png\'><br/>" + \n'
-    HTMLnotfound_str += '$"<h3 style=\'color: #f06724\'>' + headinginfo_noformat + '</h3>" + \n'
-    HTMLnotfound_str +=  '$"<p><a href=\'{webUrl\}\'>' + infoText_format + '</a></p><br/> + \n'
-    HTMLnotfound_str += '$"<p><a href=\'{webUrl\}\'><a href=\'{contactUsUrl\}\'>' + nextSteps_noformat + '</a></a></p>" + \n'
-    HTMLnotfound_str += '$"<p><b>' + questions_noformat + '</b></p>" + \n'
-    HTMLnotfound_str += '$"<p> <a href=\'{vaccineFAQUrl\} ' + visitFAQ_noformat + '</a> </p>" + \n'
-    HTMLnotfound_str += '$"<p><b>' + stayInformed_noformat + '</b></p>" + \n'
-    HTMLnotfound_str += '$"<p><a href=\'{covidWebUrl\}\'>' + viewInfo_noformat + '</a></p><br/>" + \n'
-    HTMLnotfound_str += '$"<footer><p style=\'text-align:center\'>' + emailLabel_noformat + '</p>" + \n'
-    HTMLnotfound_str += '$"<p style=\'text-align:center\'><img src=\'{emailLogoUrl\}\'></p></footer>",'
+    HTMLnotfound_str = '$"<img src=\'{webUrl}/imgs/MyTurn-logo.png\'><br/>" +\n'
+    HTMLnotfound_str += '$"<h3 style=\'color: #f06724\'>' + headinginfo_noformat + '</h3>" +\n'
+    HTMLnotfound_str +=  '$"<p><a href=\'{webUrl}\'>' + infoText_noformat + '</a></p><br/> +\n'
+    HTMLnotfound_str += '$"<p><a href=\'{webUrl}\'><a href=\'{contactUsUrl}\'>' + nextSteps_noformat + '</a></a></p>" +\n'
+    HTMLnotfound_str += '$"<p><b>' + questions_noformat + '</b></p>" +\n'
+    HTMLnotfound_str += '$"<p> <a href=\'{vaccineFAQUrl}\' ' + visitFAQ_noformat + '</a> </p>" +\n'
+    HTMLnotfound_str += '$"<p><b>' + stayInformed_noformat + '</b></p>" +\n'
+    HTMLnotfound_str += '$"<p><a href=\'{covidWebUrl}\'>' + viewInfo_noformat + '</a></p><br/>" +\n'
+    HTMLnotfound_str += '$"<hr>" +\n'
+    HTMLnotfound_str += '$"<footer><p style=\'text-align:center\'>' + emailLabel_noformat + '</p>" +\n'
+    HTMLnotfound_str += '$"<p style=\'text-align:center\'><img src=\'{emailLogoUrl}\'></p></footer>",'
 
     output_str += '\n ----------------------------------tagging output for HTMLNOTFOUND-------------------\n\n\n'
 
