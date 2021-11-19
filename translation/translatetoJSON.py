@@ -1,7 +1,7 @@
 from docx import Document
 import json 
 import os
-
+from faq import parseFaq
 
 
 #Steps to run this code: 
@@ -78,6 +78,9 @@ for z in documents:
     overall_dict.pop('remove1')
     overall_dict.pop('qrpage') #removed cause it's empty
     # print (overall_dict)
+
+    # Add faqpage
+    parseFaq(document, overall_dict)
 
     jsonData = json.dumps(overall_dict, indent=4, separators=(", ", ": "), ensure_ascii=False).replace('null', '""')
 
