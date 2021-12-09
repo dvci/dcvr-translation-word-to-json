@@ -6,14 +6,12 @@ from faq import parseFaq
 
 #Steps to run this code: 
     # 1. import docx and json using (pip)or pip3 install python-docx
-    # 2. run python script.py and it will output a data.json file 
-    # 3. right now the configuration is that the last 4 tables are not being used and if they ever want to be used, just add the header to the key and get rid of a pop() statement corresponding to that key
-    # 4. **IMPORTANT** make sure that the language header matches up to table name
-
+    # 2. Place the files that need to be translated into a folder called translate (line 17) or whatever directory you want them in
+    # 3. run python script.py and it will output a data.json file 
+    # 4. right now the configuration is that the last 4 tables are not being used and if they ever want to be used, just add the header to the key and get rid of a pop() statement corresponding to that key
 
 # document = Document('russian.docx')
 # document = Document('farsi.docx')
-# document = Document('Spanish.docx')
 
 path = './translate'
 folder = os.fsencode(path)
