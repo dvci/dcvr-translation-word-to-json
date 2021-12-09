@@ -7,7 +7,7 @@ import re
     # 1. import docx and json using (pip)or pip3 install python-docx
     # 2. Create a directory called translate and put all the word docs that you want formatted
     # 3. run python3 formatAPI_script.py
-    # 4. files will be output for each doc
+    # 4. files will be output for each doc in the same folder
 
 path = './translate'
 folder = os.fsencode(path)
